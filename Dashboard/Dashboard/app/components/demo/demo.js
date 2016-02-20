@@ -187,6 +187,7 @@ function DemoController($scope, $http, ServiceURLs)
                     $scope.SelectedStudentDetails.DOB = $scope.SelectedStudentDetailsBeforeEdit.DOB = null;
 
                     input1.value(null);
+                    input2.value(null);
                     input3.value(null);
                     input4.value(null);
                 }
@@ -224,6 +225,7 @@ function DemoController($scope, $http, ServiceURLs)
                             $scope.SelectedStudentDetails.DOB = $scope.SelectedStudentDetailsBeforeEdit.DOB = null;
 
                             input1.value(null);
+                            input2.value(null);
                             input3.value(null);
                             input4.value(null);
                         });
