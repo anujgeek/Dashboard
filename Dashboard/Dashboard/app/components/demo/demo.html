@@ -1,0 +1,66 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <h4>Select a student type</h4>
+        <br />
+        <table id="table1" class="compact hover row-border cell-border" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Student Type</th>
+                    <th>Capacity</th>
+                    <th>Enrolled</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <h4>Select a student</h4>
+        <br />
+        <table id="table2" class="compact hover row-border cell-border" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <br />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <h4>Selected student information</h4>
+        <br />
+        <div class="k-content">
+            <div class="row">
+                <div class="col-sm-3">
+                    <label>Id: <input id="input1" /></label>
+                </div>
+                <div class="col-sm-3">
+                    <label>Name: <input id="input2" ng-model="SelectedStudentDetails.Name" /></label>
+                </div>
+                <div class="col-sm-3">
+                    <label>Gender: <input id="input3" /></label>
+                </div>
+                <div class="col-sm-3">
+                    <label>DOB: <input id="input4" /></label>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <button id="EditButton" type="button" class="btn btn-primary pull-right" ng-click="EditButtonClicked()" ng-hide="InEditMode">Edit</button>
+                <div id="SaveButtonTooltip" class="pull-right" kendo-tooltip k-options="SaveButtonTooltipConfig">
+                    <button id="CancelButton" type="button" class="btn btn-danger" style="margin-right:10px" ng-click="CancelButtonClicked()" ng-show="InEditMode">Cancel</button>
+                    <button id="SaveButton" type="button" class="btn btn-success" ng-show="InEditMode" disabled>Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
