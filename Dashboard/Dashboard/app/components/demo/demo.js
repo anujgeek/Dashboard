@@ -68,7 +68,21 @@ function DemoController($scope, $http, ServiceURLs)
                 input4.enable(enable);
             }
 
+            $scope.ResetEditControls = function ()
+            {
+                $scope.SelectedStudentDetails.Id = $scope.SelectedStudentDetailsBeforeEdit.Id = null;
+                $scope.SelectedStudentDetails.Name = $scope.SelectedStudentDetailsBeforeEdit.Name = null;
+                $scope.SelectedStudentDetails.Gender = $scope.SelectedStudentDetailsBeforeEdit.Gender = null;
+                $scope.SelectedStudentDetails.DOB = $scope.SelectedStudentDetailsBeforeEdit.DOB = null;
+
+                input1.value(null);
+                input2.value(null);
+                input3.value(null);
+                input4.value(null);
+            }
+
             $scope.EnableDisableEditControls(false);
+            $scope.ResetEditControls();
 
             $scope.EditButtonClicked = function ()
             {
@@ -181,15 +195,7 @@ function DemoController($scope, $http, ServiceURLs)
                     $(this).removeClass('selected');
 
                     $scope.SelectedStudentId = "";
-                    $scope.SelectedStudentDetails.Id = $scope.SelectedStudentDetailsBeforeEdit.Id = null;
-                    $scope.SelectedStudentDetails.Name = $scope.SelectedStudentDetailsBeforeEdit.Name = null;
-                    $scope.SelectedStudentDetails.Gender = $scope.SelectedStudentDetailsBeforeEdit.Gender = null;
-                    $scope.SelectedStudentDetails.DOB = $scope.SelectedStudentDetailsBeforeEdit.DOB = null;
-
-                    input1.value(null);
-                    input2.value(null);
-                    input3.value(null);
-                    input4.value(null);
+                    $scope.ResetEditControls();
                 }
                 else
                 {
@@ -219,17 +225,14 @@ function DemoController($scope, $http, ServiceURLs)
                         },
                         function errorCallback(response)
                         {
-                            $scope.SelectedStudentDetails.Id = $scope.SelectedStudentDetailsBeforeEdit.Id = null;
-                            $scope.SelectedStudentDetails.Name = $scope.SelectedStudentDetailsBeforeEdit.Name = null;
-                            $scope.SelectedStudentDetails.Gender = $scope.SelectedStudentDetailsBeforeEdit.Gender = null;
-                            $scope.SelectedStudentDetails.DOB = $scope.SelectedStudentDetailsBeforeEdit.DOB = null;
-
-                            input1.value(null);
-                            input2.value(null);
-                            input3.value(null);
-                            input4.value(null);
+                            $scope.ResetEditControls();
                         });
                 }
+            });
+
+            $('#table2').on('draw.dt', function ()
+            {
+                $scope.ResetEditControls();
             });
         });
     };
