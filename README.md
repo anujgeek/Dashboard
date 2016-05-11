@@ -14,4 +14,4 @@ The example below demonstrates its use to manage students.
 
 ## Demo
 
-<a href="http://studentsdashboard.azurewebsites.net" target="_blank">Dashboard Live Website</a>
+<a href="http://studentsdashboard.azurewebsites.net" target="_blank">Students Dashboard Live Website</a>
